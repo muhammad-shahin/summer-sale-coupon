@@ -19,6 +19,13 @@
       type="text/css"
     />
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- style -->
+    <style>
+      .font{
+        font-size: 1.5rem;
+        font-weight: 500;
+      }
+    </style>
     <title>Summer Sale - 20% Off</title>
   </head>
   <body class="font-['Work_Sans']">
@@ -54,7 +61,7 @@
         <!-- Kitchenware Card Container -->
         <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6">
             <!-- card 1 -->
-            <div class="card w-full lg:w-[20vw] bg-base-100 shadow-xl cursor-pointer">
+            <div id="product-1" onclick="addToCart('product-1')" class="card w-full lg:w-[20vw] bg-base-100 shadow-xl cursor-pointer">
                 <div class="m-5 px-10 py-10 rounded-xl flex justify-center items-center h-[200px] bg-gray-200">
                   <img src="images/prod1.png"  class="" />
                 </div>
@@ -66,8 +73,8 @@
                         <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" checked />
                         <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
                       </div>
-                  <h2 class="card-title">Wooden Spoon</h2>
-                  <p><span id="prod1-price">39.00</span>TK</p>
+                  <h2 id="product-1-name" class="card-title">Wooden Spoon</h2>
+                  <p><span id="product-1-price">39.00</span>TK</p>
                 </div>
               </div>
             <!-- card 2 -->
@@ -166,20 +173,20 @@
     </section>
     </section>
 
-    <!-- Sidebar (Coupon & Product Prices) -->
+    <!-- Sidebar (Coupon, Product Name & Product Prices) -->
     <section class="space-y-4 mt-[12vh] w-[90%] mx-auto lg:mx-0 lg:w-auto">
     <!-- Coupon Section -->
     <div class="p-6 bg-white rounded-xl shadow-xl">
         <h3 class="text-black font-normal text-[1.5rem] mb-4">Have coupon?</h3>
         <div class="relative lg:w-full">
             <input type="text" placeholder="Coupon Code" class="input input-bordered w-full pr-16" /> 
-            <button class="btn bg-[#E527B2] text-white absolute top-0 right-0 rounded-l-none normal-case">Apply</button>
+            <button class="btn bg-[#E527B2] text-white absolute top-0 right-0 rounded-l-none normal-case" disabled>Apply</button>
           </div>
     </div>
     <!-- Prices & Discount Section -->
-    <div class="relative p-6 bg-white rounded-xl shadow-xl">
+    <div class="p-6 bg-white rounded-xl shadow-xl">
         <!-- Added Cart Item -->
-        <div id="cart-item">
+        <div id="cart-item" class="font-[1.5rem] text-semibold">
 
         </div>
 
@@ -195,12 +202,14 @@
         </div>
         <div class="divider"></div>
         <div class="w-[80%] mx-auto">
-            <button id="make-purchase" class="w-full py-4 rounded-xl bg-[#E527B2] text-white font-semibold relative bottom-[-50px] normal-case">Make Purchase</button>
+            <button id="make-purchase" class="btn w-full py-4 rounded-xl bg-[#E527B2] text-white font-semibold relative bottom-[-50px] normal-case cursor-pointer" disabled>Make Purchase</button>
         </div>
     </div>
     </section>
         </section>
         
     </main>
+
+    <script src="js/script.js"></script>
   </body>
 </html>
