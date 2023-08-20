@@ -65,6 +65,8 @@ function updateTotalPrice(productPrice) {
   const newTotalPrice = previousTotalPrice + productPrice;
   setValue("total-price", newTotalPrice);
   checkCoupon();
+  const discount = getProductPrice('discount')
+  updateTotal(discount, newTotalPrice);
 }
 // update discount (coupon apply)
 function applyCoupon() {
@@ -108,4 +110,20 @@ function checkCoupon() {
     const couponBtn = document.getElementById("coupon-btn");
     couponBtn.disabled = true;
   }
+}
+// popup modal
+function popupModal(){
+    document.getElementById('popup-modal').classList.toggle('active');
+}
+// clear cart
+function clearCart(){
+    const parent = document.getElementById('cart-item')
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+      }
+    setValue('total-price', 0.00);
+    setValue('discount', 0.00);
+    setValue('total', 0.00);
+    popupModal();
+
 }
