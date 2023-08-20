@@ -25,6 +25,13 @@
         font-size: 1.5rem;
         font-weight: 500;
       }
+      .coupon-error-msg{
+        visibility: hidden;
+        color: red;
+        font-size: 14px;
+        text-align: center;
+        margin-top: 5px;
+      }
     </style>
     <title>Summer Sale - 20% Off</title>
   </head>
@@ -52,7 +59,7 @@
     <!-- Main Section -->
     <main class="bg-[#F8F8F8]">
         <!-- entire main container -->
-        <section class="lg:container mx-auto flex flex-col-reverse lg:flex-row items-center lg:justify-start lg:items-start gap-8 lg:gap-10">
+        <section class="lg:container mx-auto flex flex-col-reverse lg:flex-row items-center lg:justify-start lg:items-start gap-12">
             <!-- Cards Section-->
     <section>
         <!-- Kitchenware Card Section -->
@@ -78,7 +85,7 @@
                 </div>
               </div>
             <!-- card 2 -->
-            <div class="card w-full lg:w-[20vw] bg-base-100 shadow-xl cursor-pointer">
+            <div id="product-2" class="card w-full lg:w-[20vw] bg-base-100 shadow-xl cursor-pointer" onclick="addToCart('product-2')">
                 <div class="m-5 px-10 py-10 rounded-xl flex justify-center items-center h-[200px] bg-gray-200">
                   <img src="images/prod2.png"  class="" />
                 </div>
@@ -90,12 +97,12 @@
                         <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" checked />
                         <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
                       </div>
-                  <h2 class="card-title">Wooden Cutting board</h2>
-                  <p><span id="prod2-price">25.00</span>TK</p>
+                  <h2 id="product-2-name" class="card-title">Wooden Cutting board</h2>
+                  <p><span id="product-2-price">25.00</span>TK</p>
                 </div>
               </div>
             <!-- card 3 -->
-            <div class="card w-full lg:w-[20vw] bg-base-100 shadow-xl cursor-pointer">
+            <div id="product-3" class="card w-full lg:w-[20vw] bg-base-100 shadow-xl cursor-pointer" onclick="addToCart('product-3')">
                 <div class="m-5 px-10 py-10 rounded-xl flex justify-center items-center h-[200px] bg-gray-200">
                   <img src="images/prod3.png"  class="" />
                 </div>
@@ -107,8 +114,8 @@
                         <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" checked />
                         <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
                       </div>
-                  <h2 class="card-title">Home Cooker</h2>
-                  <p><span id="prod3-price">49.00</span>TK</p>
+                  <h2 id="product-3-name" class="card-title">Home Cooker</h2>
+                  <p><span id="product-3-price">49.00</span>TK</p>
                 </div>
               </div>
         </div>
@@ -119,7 +126,7 @@
         <!-- Sportswear Card Container -->
         <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6">
             <!-- card 4 -->
-            <div class="card w-full lg:w-[20vw] bg-base-100 shadow-xl cursor-pointer">
+            <div id="product-4" class="card w-full lg:w-[20vw] bg-base-100 shadow-xl cursor-pointer" onclick="addToCart('product-4')">
                 <div class="m-5 px-10 py-10 rounded-xl flex justify-center items-center h-[200px] bg-gray-200">
                   <img src="images/prod4.png"  class="" />
                 </div>
@@ -131,12 +138,12 @@
                         <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" checked />
                         <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
                       </div>
-                  <h2 class="card-title">Sports Black Cap</h2>
-                  <p><span id="prod4-price">49.00</span>TK</p>
+                  <h2 id="product-4-name" class="card-title">Sports Black Cap</h2>
+                  <p><span id="product-4-price">49.00</span>TK</p>
                 </div>
               </div>
             <!-- card 5 -->
-            <div class="card w-full lg:w-[20vw] bg-base-100 shadow-xl cursor-pointer">
+            <div id="product-5" class="card w-full lg:w-[20vw] bg-base-100 shadow-xl cursor-pointer" onclick="addToCart('product-5')">
                 <div class="m-5 px-10 py-10 rounded-xl flex justify-center items-center h-[200px] bg-gray-200">
                   <img src="images/prod5.png"  class="" />
                 </div>
@@ -148,12 +155,12 @@
                         <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" checked />
                         <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
                       </div>
-                  <h2 class="card-title">Full Jersey Set</h2>
-                  <p><span id="prod5-price">69.00</span>TK</p>
+                  <h2 id="product-5-name" class="card-title">Full Jersey Set</h2>
+                  <p><span id="product-5-price">69.00</span>TK</p>
                 </div>
               </div>
             <!-- card 6 -->
-            <div class="card w-full lg:w-[20vw] bg-base-100 shadow-xl cursor-pointer">
+            <div id="product-6" class="card w-full lg:w-[20vw] bg-base-100 shadow-xl cursor-pointer" onclick="addToCart('product-6')">
                 <div class="m-5 px-10 py-10 rounded-xl flex justify-center items-center h-[200px] bg-gray-200">
                   <img src="images/prod6.png"  class="" />
                 </div>
@@ -165,8 +172,8 @@
                         <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" checked />
                         <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
                       </div>
-                  <h2 class="card-title">Sports cates</h2>
-                  <p><span id="prod6-price">159.00</span>TK</p>
+                  <h2 id="product-6-name" class="card-title">Sports cates</h2>
+                  <p><span id="product-6-price">159.00</span>TK</p>
                 </div>
               </div>
         </div>        
@@ -179,9 +186,10 @@
     <div class="p-6 bg-white rounded-xl shadow-xl">
         <h3 class="text-black font-normal text-[1.5rem] mb-4">Have coupon?</h3>
         <div class="relative lg:w-full">
-            <input type="text" placeholder="Coupon Code" class="input input-bordered w-full pr-16" /> 
-            <button class="btn bg-[#E527B2] text-white absolute top-0 right-0 rounded-l-none normal-case" disabled>Apply</button>
+            <input type="text" placeholder="Coupon Code" id="coupon-input"  class="input input-bordered w-full pr-16" /> 
+            <button id="coupon-btn" onclick="applyCoupon()" class="btn bg-[#E527B2] text-white absolute top-0 right-0 rounded-l-none normal-case hover:bg-[#E527B2] " disabled>Apply</button>
           </div>
+          <p id="coupon-alert" class="coupon-error-msg"></p>
     </div>
     <!-- Prices & Discount Section -->
     <div class="p-6 bg-white rounded-xl shadow-xl">
