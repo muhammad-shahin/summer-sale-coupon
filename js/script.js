@@ -1,4 +1,4 @@
-// add to cart & calculate price
+// add to cart & calculate all price
 function addToCart(elementId) {
   switch (elementId) {
     case "product-1":
@@ -125,5 +125,4 @@ function clearCart(){
     setValue('discount', 0.00);
     setValue('total', 0.00);
     popupModal();
-
 }
